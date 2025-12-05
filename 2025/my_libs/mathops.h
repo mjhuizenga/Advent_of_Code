@@ -35,3 +35,12 @@ private:
     char **arr;
 
 };
+
+class LongRange
+{
+public:
+    LongRange(long start, long end);
+    bool contains(long needle);
+
+    long start, end;
+};

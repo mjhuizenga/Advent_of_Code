@@ -173,3 +173,23 @@ int TwoDArray::count_cells_matching_surroundings(char needle, int lower, int hig
 
     return count;
 }
+
+LongRange::LongRange(long start, long end) : start(start), end(end)
+{
+    if (start < 0 || end < 0)
+    {
+        perror("LongRange constructor given negative values");
+    }
+    
+    if (start > end)
+    {
+        long tmp = end;
+        end = start;
+        start = tmp;
+    }
+}
+
+bool LongRange::contains(long needle)
+{
+    return needle >= start && needle <= end;
+}
